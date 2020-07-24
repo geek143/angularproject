@@ -1,0 +1,54 @@
+{
+  "resturants": [
+    {
+      "name": "asdasd",
+      "address": "Hem Vihar Phase-2 Baltana",
+      "email": "ranjha.love554@gmail.com",
+      "id": 17
+    },
+    {
+      "name": "Ranjha Love",
+      "address": "Hem Vihar Phase-2 Baltana",
+      "email": "ranjha.love554@gmail.com",
+      "id": 18
+    },
+    {
+      "name": "rashi",
+      "address": "house no 40, ekta vihar baltana, zirakpur",
+      "email": "rashisaini51@gmail.com",
+      "id": 20
+    }
+  ],
+  "users": [
+    {
+      "username": "Ranjha Love",
+      "email": "ranjha.love554@gmail.com",
+      "password": "asdasd",
+      "id": 1
+    },
+    {
+      "username": "Ranjha Love",
+      "email": "ranjha.love554@gmail.com",
+      "password": "asdsad",
+      "id": 2
+    },
+    {
+      "username": "asdasd",
+      "email": "ranjha.love554@gmail.com",
+      "password": "sadasd",
+      "id": 3
+    },
+    {
+      "username": "Amit",
+      "email": "rashisaini51@gmail.com",
+      "password": "asdsad",
+      "id": 4
+    },
+    {
+      "username": "Ranjha Love",
+      "email": "ranjha.love554@gmail.com",
+      "password": "jgfghf",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<br>
+<small class="text-danger">{{myError}}</small>
+<form class="mt-4 w-50 m-auto shadow p-3" (ngSubmit)="onSubmit(valueFrom)" #valueFrom="ngForm">
+  <div #userDeatils="ngModelGroup" ngModelGroup="userDeatils">
+    <div class="form-group">
+      <label for="text">Username</label>
+      <input type="text"
+      class="form-control"
+      id="username"
+      required
+      #username="ngModel"
+      name ="username"
+      ngModel
+      placeholder="Enter username">
+
+      <button (click)="setUsername()" class="mt-2 btn btn-success btn-sm">Set Username</button>  <br>
+      <small class="text-danger" *ngIf="!username.valid && username.touched">Please Fill Username</small>
+
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="text"
+      class="form-control"
+      name ="password"
+      id="password"
+      [(ngModel)]="password"
+      required
+      placeholder="Enter Password">
+    </div>
+    <small class="text-danger" *ngIf="!userDeatils.valid && userDeatils.touched ">Please Fill All The Field</small>
+  </div>
+  <button type="submit" [disabled]="!valueFrom.valid" class="btn btn-primary">Submit</button>
+</form>

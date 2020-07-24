@@ -1,0 +1,60 @@
+<div class="row mt-4">
+  <div class="col-md-12">
+    <ng-container *ngIf="showPro">
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="addProduct">
+        <strong>{{addProduct}}</strong> Added in Cart.
+        <button type="button" class="close" (click)="closed()" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img class="card-img-top" src="http://103.99.202.39:8082/housemaid/images/whychooseus.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Tv</h5>
+        <button class="btn btn-info" (click)="selectProduct('Tv')">Select Product</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img class="card-img-top" src="http://103.99.202.39:8082/housemaid/images/whychooseus.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Laptop</h5>
+        <button class="btn btn-info" (click)="selectProduct('Laptop')">Select Product</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img class="card-img-top" src="http://103.99.202.39:8082/housemaid/images/whychooseus.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Machine</h5>
+        <button class="btn btn-info" (click)="selectProduct('Machine')">Select Product</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img class="card-img-top" src="http://103.99.202.39:8082/housemaid/images/whychooseus.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Desktop</h5>
+        <button class="btn btn-info" (click)="selectProduct('Desktop')">Select Product</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <div class="col-md-12">
+    <app-child
+    [selected]="proSelect"
+    [selectedProduct]="selPro"
+    (addProduct)="onBtn($event)"
+    ></app-child>
+  </div>
+</div>
+
+

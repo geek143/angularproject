@@ -1,0 +1,39 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="collection.length !== 0; else nohere">
+    <tr *ngFor="let item of collection | orderBy: order : false : true | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
+        <th scope="row">{{ (page - 1) * 4 + i + 1}}</th>
+        <td>{{item.name | titlecase}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.email}}</td>
+        <td>
+          <i class="fa fa-trash text-danger dele" (click)="delRestio(item.id)"></i>
+          <a routerLink="/resturants/updateresto/{{item.id}}"><i class="fa fa-pencil text-success dele ml-4"></i></a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5" class="text-right">
+          <pagination-controls [ngClass]="'mt-4'" (pageChange)="page = $event"></pagination-controls>
+        </td>
+      </tr>
+    </ng-container>
+    <ng-template #nohere>
+      <tr>
+        <td colspan="5">
+          <div class="alert alert-danger text-center" role="alert">
+             No Items Here
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>

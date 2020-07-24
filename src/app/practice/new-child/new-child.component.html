@@ -1,0 +1,5 @@
+<div class="p-3" [ngClass]="{boxRed : boxColor == 'red', boxGreen : boxColor == 'green'}">
+  <input type="text" class="form-control" [placeholder]="placeHolderText" #myInput />
+  <button class="btn btn-success mt-3" (click)="onCreate(myInput)">Add User</button>
+
+</div>

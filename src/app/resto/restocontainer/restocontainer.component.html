@@ -1,0 +1,76 @@
+<h1 class="mt-4 text-center mb-2">{{title | uppercase}}</h1>
+<hr class="mb-4">
+<div class="row">
+  <div class="col-md-3 mb-3">
+    <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          id="home-tab"
+          data-toggle="tab"
+          routerLink="addresto"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact : true}"
+          role="tab"
+          aria-controls="home"
+          aria-selected="true"
+          >Add Resto</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          id="contact-tab"
+          data-toggle="tab"
+          routerLink="login"
+          routerLinkActive="active"
+          role="tab"
+          aria-controls="contact"
+          aria-selected="false"
+          >Login</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          id="contact-tab"
+          data-toggle="tab"
+          routerLink="register"
+          routerLinkActive="active"
+          role="tab"
+          aria-controls="contact"
+          aria-selected="false"
+          >Register</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          id="contact-tab"
+          data-toggle="tab"
+          routerLink="list"
+          routerLinkActive="active"
+          role="tab"
+          aria-controls="contact"
+          aria-selected="false"
+          >List Of Resturants</a
+        >
+      </li>
+    </ul>
+  </div>
+  <!-- /.col-md-4 -->
+  <div class="col-md-9">
+    <div class="tab-content" id="myTabContent">
+      <div
+        class="tab-pane fade show active"
+        id="home"
+        role="tabpanel"
+      >
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-md-8 -->
+</div>
+
+

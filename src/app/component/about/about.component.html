@@ -1,0 +1,48 @@
+<br>
+<h1 appDesingDirective>Change Color About</h1>
+<!-- <br>
+<input type="text" #valueg>
+<button (click)="addValue(valueg)">Add Value</button>
+<button class="btn btn-danger btn-sm" (click)="removeUser()">Remove</button>
+<br>
+<br>
+<table class="table table-bordered">
+  <tr>
+    <td>Add Values</td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let item of users; let i = index">
+    <td>{{item.name}}</td>
+    <td><button class="btn btn-danger btn-sm" (click)="delUser(i)">Remove</button></td>
+  </tr>
+</table> -->
+<br>
+<!-- <input type="text" #fname />
+<button (click)="update(fname)">Upadte</button>
+<app-ncard2 [myValue]="newValue" *ngIf="hideMe">
+  <h1>Sukhi Ng Contact {{newValue}}</h1>
+</app-ncard2>
+
+<br>
+<button (click)="desTroy()" class="btn btn-danger">Destroy</button> -->
+
+<input type="text" placeholder="Search Product" [(ngModel)]="nameValue" class="form-control">
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>1</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Availabilty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productArr | filter : nameValue">
+      <td>{{product.sno}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.availabilty}}</td>
+    </tr>
+  </tbody>
+</table>
