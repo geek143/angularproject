@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2 } fr
 import { DesignUtilityService } from 'src/app/appServices/design-utility.service';
 import { NcardComponent } from 'src/app/subjetcs/ncard/ncard.component';
 import { DesingDirectiveDirective } from 'src/app/appDirective/desing-directive.directive';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   myText : any = Object;
   constructor(
     private _design: DesignUtilityService,
-    private render: Renderer2
+    private render: Renderer2,
+    private titleService : Title,
+    private meta: Meta
     ) {
 
     }
@@ -27,7 +30,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
      .subscribe(data => {
        this.username = data;
      });
-
+     this.titleService.setTitle("Home Page");
+     this.meta.addTag({
+      name: 'description', content: 'This is my Home Page'
+     });
   }
 
   ngAfterViewInit()

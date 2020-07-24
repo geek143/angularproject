@@ -29,9 +29,12 @@ export class DemoComponent implements OnInit {
     }
   ]
 
+  showMe : boolean = false;
 
-
-
+  onChange()
+  {
+    this.showMe = !this.showMe
+  }
   ngOnInit(): void {
 
   }

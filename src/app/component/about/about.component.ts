@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Title, Meta }     from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  title = "About Us Page";
+  constructor(
+    private router: Router,
+    private titleService: Title,
+    private meta: Meta
+  ) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle( this.title );
+    this.meta.addTag({
+      name: 'description', content: 'This is My About Us Page'
+    })
+    this.meta.updateTag({
+      name: 'description', content: 'This is My About 123 Us Page'
+    })
+  }
 
   users = [];
 

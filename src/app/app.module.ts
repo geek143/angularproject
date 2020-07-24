@@ -37,6 +37,7 @@ import { RestocontainerComponent } from './resto/restocontainer/restocontainer.c
 import { RestoService } from './resto/resto.service';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 import { OrderModule } from 'ngx-order-pipe';
+import { MyModuleColModule } from './demo/my-module-col.module';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { OrderModule } from 'ngx-order-pipe';
     ColorDirectiveModule,
     BsDropdownModule.forRoot(),
     NgxPaginationModule,
-    OrderModule
+    OrderModule,
+    MyModuleColModule
 
   ],
   providers: [DesignUtilityService, HeaderserService, GalleryItem,RestoService],
