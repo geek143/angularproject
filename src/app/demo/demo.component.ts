@@ -1,6 +1,17 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DesignUtilityService } from '../appServices/design-utility.service';
+import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
+
 
 @Component({
   selector: 'app-demo',
@@ -30,13 +41,26 @@ export class DemoComponent implements OnInit {
   ]
 
   showMe : boolean = false;
-
-  onChange()
+  checked : boolean = false;
+  yesno = "No";
+  onChange(val)
   {
-    this.showMe = !this.showMe
+    console.log(val);
+    this.showMe = !this.showMe;
   }
   ngOnInit(): void {
 
   }
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
+  nameControl = new FormControl('', [
+    Validators.required,
+  ]);
+
+  matcher = new MyErrorStateMatcher();
 
 }
